@@ -71,7 +71,7 @@ export function AppCards() {
         {apps.map((app, index) => (
           <Link key={app.title} href={app.href} target="_blank" rel="noopener noreferrer" className="group block h-full">
             <Card
-              className={`w-full h-full flex flex-col transition-all duration-500 ease-out group-hover:shadow-2xl group-hover:-translate-y-2 rounded-2xl overflow-hidden bg-white/40 backdrop-blur-md border border-white/20 shadow-lg ${
+              className={`w-full h-full flex flex-col transition-all duration-500 ease-out group-hover:shadow-2xl group-hover:-translate-y-2 rounded-2xl overflow-hidden bg-white/30 backdrop-blur-lg border border-white/40 shadow-xl group-hover:bg-white/50 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}
@@ -85,7 +85,7 @@ export function AppCards() {
                 <Badge variant="secondary" className="font-mono text-xs tracking-wider bg-black/5 text-foreground/70 border-black/10">{app.feature}</Badge>
               </CardContent>
               <CardFooter className="justify-center p-6 pt-0">
-                <Button variant="outline" className={`transition-all duration-300 border-2 bg-transparent text-foreground/80 border-${app.accentClass} group-hover:bg-${app.accentClass} group-hover:text-primary-foreground group-hover:shadow-lg group-hover:shadow-${app.accentClass}/30`}>
+                <Button variant="outline" className={`transition-all duration-300 border-2 bg-transparent text-foreground/80 border-${app.accentClass} group-hover:bg-black/10 group-hover:text-foreground group-hover:shadow-lg`}>
                   {app.cta} <MoveRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </CardFooter>
