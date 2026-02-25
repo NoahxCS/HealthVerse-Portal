@@ -18,15 +18,6 @@ const apps = [
     accentClass: "healthsense",
   },
   {
-    icon: <GlassWater className="h-10 w-10 text-hydraweight" />,
-    title: "HydraWeight",
-    description: "Your personal dashboard for daily hydration and weight management.",
-    feature: "Track daily intake",
-    cta: "Go to HydraWeight",
-    href: "https://hydraweight.vercel.app",
-    accentClass: "hydraweight",
-  },
-  {
     icon: <HeartPulse className="h-10 w-10 text-bloodlink" />,
     title: "BloodLink Kerala",
     description: "Find blood donors and blood banks across Kerala instantly.",
@@ -34,6 +25,15 @@ const apps = [
     cta: "Find Donors",
     href: "https://bloodlink-gamma.vercel.app",
     accentClass: "bloodlink",
+  },
+  {
+    icon: <GlassWater className="h-10 w-10 text-hydraweight" />,
+    title: "HydraWeight",
+    description: "Your personal dashboard for daily hydration and weight management.",
+    feature: "Track daily intake",
+    cta: "Go to HydraWeight",
+    href: "https://hydraweight.vercel.app",
+    accentClass: "hydraweight",
   },
 ];
 
@@ -66,12 +66,12 @@ export function AppCards() {
   }, []);
 
   return (
-    <section ref={ref} className="w-full py-12 md:py-24 lg:py-32 bg-muted/20">
+    <section ref={ref} className="w-full py-12 md:py-24 lg:py-32">
       <div className="container grid items-stretch justify-center gap-8 px-4 md:px-6 lg:grid-cols-3">
         {apps.map((app, index) => (
           <Link key={app.title} href={app.href} target="_blank" rel="noopener noreferrer" className="group block h-full">
             <Card
-              className={`w-full h-full flex flex-col transition-all duration-500 ease-out group-hover:shadow-2xl group-hover:-translate-y-2 rounded-xl overflow-hidden ${
+              className={`w-full h-full flex flex-col transition-all duration-500 ease-out group-hover:shadow-2xl group-hover:-translate-y-2 rounded-2xl overflow-hidden bg-white/40 backdrop-blur-md border border-white/20 shadow-lg ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}
@@ -82,10 +82,10 @@ export function AppCards() {
               </CardHeader>
               <CardContent className="flex-grow flex flex-col items-center justify-start text-center p-6 pt-2 space-y-4">
                 <CardDescription>{app.description}</CardDescription>
-                <Badge variant="secondary" className="font-mono text-xs tracking-wider">{app.feature}</Badge>
+                <Badge variant="secondary" className="font-mono text-xs tracking-wider bg-black/5 text-foreground/70 border-black/10">{app.feature}</Badge>
               </CardContent>
               <CardFooter className="justify-center p-6 pt-0">
-                <Button variant="outline" className={`transition-all duration-300 border-2 bg-transparent text-foreground/80 border-${app.accentClass} group-hover:bg-${app.accentClass} group-hover:text-white group-hover:shadow-lg group-hover:shadow-${app.accentClass}/30`}>
+                <Button variant="outline" className={`transition-all duration-300 border-2 bg-transparent text-foreground/80 border-${app.accentClass} group-hover:bg-${app.accentClass} group-hover:text-primary-foreground group-hover:shadow-lg group-hover:shadow-${app.accentClass}/30`}>
                   {app.cta} <MoveRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </CardFooter>
