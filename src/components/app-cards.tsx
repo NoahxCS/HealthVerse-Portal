@@ -30,7 +30,7 @@ const apps = [
     icon: <HeartPulse className="h-10 w-10 text-bloodlink" />,
     title: "BloodLink Kerala",
     description: "Find blood donors and blood banks across Kerala instantly.",
-    feature: "20+ Donors Available Now",
+    feature: "235+ Donors Available Now",
     cta: "Find Donors",
     href: "https://bloodlink-gamma.vercel.app",
     accentClass: "bloodlink",
